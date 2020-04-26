@@ -338,15 +338,15 @@ function! s:AddHighlighting()
         exec 'syn match ' . l:name . ' #' . escape(l:synmap[l:name], '~') . '# containedin=NERDTreeFlags'
     endfor
 
-    hi def link NERDTreeGitStatusModified Special
-    hi def link NERDTreeGitStatusStaged Function
-    hi def link NERDTreeGitStatusRenamed Title
-    hi def link NERDTreeGitStatusUnmerged Label
-    hi def link NERDTreeGitStatusUntracked Comment
-    hi def link NERDTreeGitStatusDirDirty Tag
-    hi def link NERDTreeGitStatusDirClean DiffAdd
+    hi def link NERDTreeGitStatusModified GitGutter.Change
+    hi def link NERDTreeGitStatusStaged GitGutter.Change
+    hi def link NERDTreeGitStatusRenamed GitGutter.Change
+    hi def link NERDTreeGitStatusUnmerged GitGutter.Delete
+    hi def link NERDTreeGitStatusUntracked GitGutter.Add
+    hi def link NERDTreeGitStatusDirDirty GitGutter.Change
+    hi def link NERDTreeGitStatusDirClean Comment
     " TODO: use diff color
-    hi def link NERDTreeGitStatusIgnored DiffAdd
+    hi def link NERDTreeGitStatusIgnored Comment
 endfunction
 
 function! s:SetupListeners()
