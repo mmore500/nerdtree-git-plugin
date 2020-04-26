@@ -334,7 +334,7 @@ function! s:AddHighlighting()
                 \ }
 
     for l:name in keys(l:synmap)
-        echo 'syn match ' . l:name . ' #' . escape(l:synmap[l:name], '~') . '# containedin=NERDTreeFlags'
+        echom 'syn match ' . l:name . ' #' . escape(l:synmap[l:name], '~') . '# containedin=NERDTreeFlags'
         exec 'syn match ' . l:name . ' #' . escape(l:synmap[l:name], '~') . '# containedin=NERDTreeFlags'
     endfor
 
